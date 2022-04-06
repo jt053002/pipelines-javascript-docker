@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: jtpipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jtpipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: jtpipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: jtpipelinesjavascriptdocker 
+          image: fhscontainerregistry.azurecr.io/jtpipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
